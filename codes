@@ -1,3 +1,19 @@
+Class 1:
+
+Commands:
+ansible -m ping all
+ansible -m ping groupname
+ansible-inventory --list
+ansible-inventory - - graph’
+ansible all -a "python --version"
+ansible all -a "whoami"
+ansible all -a "uname"
+ansible --list-host all
+ansible -m setup all
+ansible -m setup all -a “filter=ansible_distribution”
+
+
+
 ---
 - name: Install apache on ubuntu servers
   hosts: webserver
