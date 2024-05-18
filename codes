@@ -1,0 +1,22 @@
+---
+- name: Install apache on ubuntu servers
+  hosts: webserver
+  become: yes
+
+  tasks:
+  - name: Install apache
+    yum:
+      name: httpd
+      state: latest
+
+  - name: start apache
+    service:
+      name: httpd
+      state: started
+      state: enabled
+or
+  - name: Start apache
+    service: name=httpd state=started enabled=yes
+
+  - name: create and write into an index.html file
+    shell: echo "Hello World from $(hostname -f) cloudboosta" | sudo tee /var/www/html/index.html
