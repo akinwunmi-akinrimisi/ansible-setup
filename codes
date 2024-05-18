@@ -33,8 +33,6 @@ Class 2:
 ---
 - name: ping servers
   hosts: all
-  vars:
-    distribution: "{{ ansible_distribution}}"
 
   tasks:
    - name: print the OS of each host
